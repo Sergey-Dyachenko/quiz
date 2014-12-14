@@ -1,6 +1,7 @@
 <?php
 Route::get('/', ['as' => 'login', 'uses' => 'LoginController@getIndex']);
 Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@getLoginform']);
+Route::get('/register', ['as' => 'login', 'uses' => 'RegisterController@getRegisterform']);
 Route::controller('login', 'LoginController');
 Route::group(array('prefix' => 'backends'	, 'before' => 'auth'), function(){
 	Route::controller('dashboard'			, 'AdminDashboardController');
